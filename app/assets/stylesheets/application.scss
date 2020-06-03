@@ -1,0 +1,67 @@
+@import "bulma";
+@import "bulma-extensions";
+
+table {
+  @extend .table;
+}
+
+h1 {
+  @extend .is-size-2;
+}
+
+h2 {
+  @extend .is-size-3;
+}
+
+label {
+  @extend .label;
+}
+
+input {
+  @extend .input;
+}
+
+table {
+  @extend .table;
+}
+
+h1 {
+  @extend .is-size-2;
+}
+
+h2 {
+  @extend .is-size-3;
+}
+
+label {
+  @extend .label;
+}
+
+input[type="submit"] {
+  @extend .button;
+  @extend .is-primary;
+}
+
+button {
+  @extend .button;
+  &[type="submit"] {
+    @extend .is-primary;
+  }
+}
+
+.invalid-feedback {
+  @extend .help;
+  @extend .is-danger;
+}
+
+button {
+  @extend .button;
+  &[type="submit"] {
+    @extend .is-primary;
+  }
+}
+
+.invalid-feedback {
+  @extend .help;
+  @extend .is-danger;
+}
