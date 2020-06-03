@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'page#index'
+  resources :orders
+  root 'orders#index'
+  get '/', to: 'page#index'
 end
