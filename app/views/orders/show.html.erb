@@ -1,19 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Buyer:</strong>
-  <%= @order.buyer %>
-</p>
+<h1>Order #<%= @order.id %></h1>
 
-<p>
-  <strong>Seller:</strong>
-  <%= @order.seller %>
-</p>
+<div class="columns">
+  <div class="column">
+    <%= render partial: 'line_items/table', locals: { line_items: @order.line_items } %>
+  </div>
+  <div class="column">
+    <p>
+      <strong>Buyer:</strong>
+      <%= @order.buyer %>
+    </p>
 
-<p>
-  <strong>Total:</strong>
-  <%= @order.total %>
-</p>
+    <p>
+      <strong>Seller:</strong>
+      <%= @order.seller %>
+    </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
+    <p>
+      <strong>Total:</strong>
+      <%= @order.total %>
+    </p>
+
+    <%= link_to 'Edit', edit_order_path(@order) %>
+  </div>
+</div>
+
 <%= link_to 'Back', orders_path %>
