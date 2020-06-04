@@ -10,6 +10,9 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    # we are not going through the association to avoid including this in
+    # the table
+    @new_line_item = LineItem.new(order: @order)
   end
 
   # GET /orders/new

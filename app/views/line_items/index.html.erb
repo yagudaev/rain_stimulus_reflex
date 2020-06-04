@@ -1,12 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Line Items</h1>
-
-
-    <%= render partial: 'table', line_items: @line_items %>
-  </tbody>
-</table>
-
+<%= render partial: 'table', line_items: @line_items, new_line_item: @new_line_item %>
 <br>
 
 <%= link_to 'New Line Item', new_line_item_path %>

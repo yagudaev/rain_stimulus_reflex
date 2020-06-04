@@ -1,10 +1,14 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="message">
+    <div class="message-body"><%= notice %></div>
+  </div
+<% end %>
 
 <h1>Order #<%= @order.id %></h1>
 
 <div class="columns">
   <div class="column">
-    <%= render partial: 'line_items/table', locals: { line_items: @order.line_items } %>
+    <%= render partial: 'line_items/table', locals: { line_items: @order.line_items, new_line_item: @new_line_item } %>
   </div>
   <div class="column">
     <p>

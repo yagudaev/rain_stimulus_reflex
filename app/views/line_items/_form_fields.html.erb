@@ -1,0 +1,35 @@
+<% if line_item.errors.any? %>
+  <tr id="error_explanation">
+    <td colspan="5">
+      <h2><%= pluralize(line_item.errors.count, "error") %> prohibited this line_item from being saved:</h2>
+
+      <ul>
+        <% line_item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+<% end %>
+
+<tr>
+  <td class="field">
+    <%= form.text_field :seller, placeholder: 'Seller' %>
+  </td>
+
+  <td class="field">
+    <%= form.text_field :product, placeholder: 'Product' %>
+  </td>
+
+  <td class="field">
+    <%= form.text_field :order_id, placeholder: 'Order ID' %>
+  </td>
+
+  <td class="field">
+    <%= form.number_field :quantity, placeholder: 'Quantity' %>
+  </td>
+
+  <td class="actions" colspan="2">
+    <%= form.submit value: 'Add' %>
+  </td>
+</tr>
