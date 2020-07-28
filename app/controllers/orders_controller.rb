@@ -56,6 +56,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:buyer, :seller, :total)
+    params.require(:order).permit(:buyer, :seller, :total, line_items_attributes: %i[id seller product quantity])
   end
 end

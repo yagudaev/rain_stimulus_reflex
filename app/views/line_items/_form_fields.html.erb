@@ -12,7 +12,7 @@
   </tr>
 <% end %>
 
-<tr>
+<%= tag.tr class: class_names('is-hidden': hidden), data: { mode: "edit" } do %>
   <td class="field">
     <%= form.text_field :seller, placeholder: 'Seller' %>
   </td>
@@ -22,14 +22,12 @@
   </td>
 
   <td class="field">
-    <%= form.text_field :order_id, placeholder: 'Order ID' %>
-  </td>
-
-  <td class="field">
     <%= form.number_field :quantity, placeholder: 'Quantity' %>
   </td>
 
   <td class="actions" colspan="2">
-    <%= form.submit value: 'Add' %>
+    <%= form.hidden_field :id %>
+    <%= form.submit value: form.object.persisted? ? 'Save' : 'Add' %>
+    <%= link_to 'Cancel', '#', data: { action: 'click->inline-edit-table#toggleEdit'} %>
   </td>
-</tr>
+<% end %>
