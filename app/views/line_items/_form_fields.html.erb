@@ -28,6 +28,8 @@
   <td class="actions" colspan="2">
     <%= form.hidden_field :id %>
     <%= form.submit value: form.object.persisted? ? 'Save' : 'Add' %>
-    <%= link_to 'Cancel', '#', data: { action: 'click->inline-edit-table#toggleEdit'} %>
+    <% if form.object.persisted? %>
+      <%= link_to 'Cancel', '#', data: { action: 'click->inline-edit-table#toggleEdit'} %>
+    <% end %>
   </td>
 <% end %>
